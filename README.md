@@ -2,7 +2,7 @@
 
 this is a hexo theme base on pacman and Iceman,completefull function and pretty ui.
 
-[dream demo](https://dreajay.github.io/)
+[dream demo](http://dreajay.github.io/)
 
 [pacman](https://github.com/A-limon/pacman)
 
