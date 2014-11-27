@@ -1,0 +1,14 @@
+<% if(theme.fotorama.enable) { %>
+<div class="fotorama-wrap">
+    <div class="fotorama" data-fit="<%- theme.fotorama.fit %>" data-nav="<%- theme.fotorama.nav %>" data-transition="<%- theme.fotorama.transition %>" data-autoplay="<%- theme.fotorama.autoplay %>" data-loop="<%- theme.fotorama.loop %>" data-width="2000" data-maxwidth="100%">
+        <% for (var i = 0, l = theme.fotorama.photos.length; i < l; i ++) {
+            var photo = theme.fotorama.photos[i]; %>
+            <% if (photo.thumb) { %>
+            <a href="<%- theme.fotorama.baseurl + photo.show %>"><img src="<%- theme.fotorama.baseurl + photo.thumb %>" /></a>
+            <% } else { %>
+            <img src="<%- theme.fotorama.baseurl + photo %>" />
+            <% } %>
+        <% } %>
+    </div>
+</div>
+<% } %>

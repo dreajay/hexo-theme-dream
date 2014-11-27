@@ -1,0 +1,19 @@
+<!-- html添加微博命名空间 <html xmlns:wb="http://open.weibo.com/wb"> 
+<p class="asidetitle"></p>
+<wb:follow-button uid="2583230784" type="red_1" width="67" height="24" ></wb:follow-button>
+-->
+<p class="asidetitle"></p>
+<div id="wb_follow_btn"></div>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		WB2.anyWhere(function(W){
+		    W.widget.followButton({
+		        'nick_name': 'dreajay',  //用户昵称
+		        'id': "wb_follow_btn",
+		        'show_head' : true, //是否显示头像
+		        'show_name' : true, //是否显示名称
+		        'show_cancel': true //是否显示取消关注按钮
+		    });
+		});
+</script>
+

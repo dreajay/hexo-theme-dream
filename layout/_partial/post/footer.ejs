@@ -1,0 +1,13 @@
+<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+<% if(theme.baidushare.enable){ %>
+  <%- partial('baidushare') %>
+<% }else if(theme.jiathis.enable){ %>
+  <%- partial('jiathis') %>
+<% } else if(theme.defaultshare.enable){ %>
+  <div data-url="<%- item.permalink %>" data-title="<% if (item.title){ %><%= item.title %> | <% } %><%= config.title %>" data-tsina="<%= theme.author.tsina %>" class="share clearfix">
+  </div>
+<% } %>
+</div>
+<%- partial('catetags') %>
+</footer>
