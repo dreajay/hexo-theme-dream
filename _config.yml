@@ -33,7 +33,7 @@ favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put im
 apple_icon: img/pacman.jpg ## size:114px*114px,please put image into the theme folder `/dream/source/img`.
 
 #### Author Avatar Picture
-author_img_enable: true ## display author avatar picture
+author_img_enable: false ## display author avatar picture
 dataURI: false
 ## if the picture's format is dataURI please set the value to true,otherwise set the value to false.
 ## convert an image into base 64 data URIs http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/ .
@@ -62,8 +62,8 @@ fancybox: false
 #### Author information
 author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
-  intro_line1: "" ## eg: "Hello ,I'm Larry Page in Google."
-  intro_line2: "" ## eg: "This is my blog,believe it or not."
+  intro_line1: "没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生！" ## eg: "Hello ,I'm Larry Page in Google."
+  intro_line2: "再长的路，一步步也能走完，再短的路，不迈开双脚也无法到达，平凡的脚步也可以走完伟大的行程！" ## eg: "This is my blog,believe it or not."
   weibo:       2583230784     ## e.g. 2583230784 for http://weibo.com/2583230784
   twitter:     idreajay ## e.g. yangjiansky for https://twitter.com/idreajay
   github:      dreajay ## e.g. A-limon for https://github.com/A-limon
@@ -96,6 +96,12 @@ jiathis:
 #### 百度统计
 baidu_tongji: 
    enable: true
+
+#### 百度搜索
+baidu_search: 
+  enable: false
+  zhannei: "17834434419516021878"
+
 
 #### Analytics
 google_analytics:

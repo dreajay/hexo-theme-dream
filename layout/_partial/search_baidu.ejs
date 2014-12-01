@@ -1,0 +1,66 @@
+    
+<div id="searchdiv">
+    <img id="loadgif" src="<%- config.root %>img/load.gif" style="position:absolute;left: 45%;top:50%;display:none;">
+    <p id="search_prompt" style="position:absolute;left:45%;top:50%;display:none;"></p>
+    <div>
+        <iframe id="baidu-search" name="baidu-search" marginheight="0px" marginwidth="0px" width="100%" height="1000px" frameborder="0" scrolling="no" ></iframe>
+    </div>
+</div>  
+
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script language="JavaScript">
+
+    function createRequestObject() {
+        FORM_DATA = new Object();
+        separator = ',';
+        query = '' +decodeURI( this.location);
+        qu = query
+        query = query.substring((query.indexOf('?')) + 1);
+        // Keep everything after the question mark '?'.
+        if (query.length < 1) { return false; }  // Perhaps we got some bad data?
+        keypairs = new Object();
+        numKP = 1;
+        // Local vars used to store and keep track of name/value pairs
+        // as we parse them back into a usable form.
+        while (query.indexOf('&') > -1) {
+        keypairs[numKP] = query.substring(0,query.indexOf('&'));
+        query = query.substring((query.indexOf('&')) + 1);
+        numKP++;
+        }
+        keypairs[numKP] = query;
+        for (i in keypairs) {
+        keyName = keypairs[i].substring(0,keypairs[i].indexOf('='));
+        keyValue = keypairs[i].substring((keypairs[i].indexOf('=')) + 1);
+        while (keyValue.indexOf('+') > -1) {
+        keyValue = keyValue.substring(0,keyValue.indexOf('+')) + ' ' + keyValue.substring(keyValue.indexOf('+') + 1);
+        }
+        keyValue = unescape(keyValue);
+        if (FORM_DATA[keyName]) {
+        FORM_DATA[keyName] = FORM_DATA[keyName] + separator + keyValue;
+        } else {
+        FORM_DATA[keyName] = keyValue;
+        }
+        }
+        return FORM_DATA;
+    }
+
+    $("body").css("background","#FFFFFF");
+    FORM_DATA = createRequestObject();
+    var q=FORM_DATA['q'];
+    if (q){
+        $("#search_prompt").css("display","none");
+        $("#loadgif").css("display","inline");
+        var search = $("#baidu-search");
+        //820421516555549197
+        var zhanneiid = '17834434419516021878';
+        search.attr("src",'http://zhannei.baidu.com/cse/search?entry=1&s='+zhanneiid+'&q='+q);
+        search.load(function() {
+            $("#loadgif").css("display","none");
+        });
+    }else{
+        $("#loadgif").css("display","none");
+        $("#search_prompt").css("display","block");
+        $("#search_prompt").html('请使用上方搜索框，示例：<a href="search.html?q=blog">blog</a>。');
+    }
+
+</script>
